@@ -6,7 +6,7 @@ const urlQuery = (url = window.location.search) => {
   return objURL
 }
 
-const a = 2
+const a = 4
 
 export default {
   urlQuery
