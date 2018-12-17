@@ -5,3 +5,5 @@ const urlQuery = (url = window.location.search) => {
 	})
 	return objURL
 }
+
+export default urlQuery
