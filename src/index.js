@@ -1,22 +1,11 @@
-import Msg from './app.vue';
+import MsgComponent from './app.vue';
 
-const components = {
-  Msg
-};
 
-const install = function (Vue, opts = {}) {
-
-  Object.keys(components).forEach((key) => {
-    // support byte-xxx components name
-    Vue.component(components[key].name, components[key]);
-  });
+const Msg = {
+  // install 是默认的方法。当外界在 use 这个组件的时候，就会调用本身的 install 方法，同时传一个 Vue 这个类的参数。
+  install: function(Vue){
+      Vue.component('Msg', MsgComponent)
+  }
 }
 
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
-}
-
-module.exports = {
-  install,
-  Msg
-};
+export default Msg;
