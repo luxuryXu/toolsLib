@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <div class="msg-wrapper">
+        <span>hello!</span>
+        <span class="account">{{data.name}}</span>
+    </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'Msg',
+        data () {
+          return {}
+        },
+        props: {
+          data: {
+            type: Object
+          }
+        },
+    }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="less" scoped>
+  .msg-wrapper {
+    width: 100px;
+    .account {
+      color: red;
+    }
+  }
 </style>
